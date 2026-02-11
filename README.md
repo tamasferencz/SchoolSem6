@@ -1,1 +1,3 @@
-# SchoolSem6
+# 🎓 University Semester 6
+
+This repository contains all my university materials from the sixth semester.
