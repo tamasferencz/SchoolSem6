@@ -6,4 +6,4 @@
 
 - Hostname: localhost
 - Port: 2000-ullman, 2001-aramis
-- Server name: ullman/aramis
+- Service name: ullman/aramis
