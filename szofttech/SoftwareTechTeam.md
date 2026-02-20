@@ -8,36 +8,40 @@ Itt egy javaslat arra, hogyan osszuk fel a rendszert 4 felé úgy, hogy mindenki
 
 A max jegyhez **5 komplexitási pont** kell. Az alapjáték 1.5 pontot ér.
 
-**Ajánlott csomag:** Erdők (0.5) + Folyók/Tavak (0.5) + Domborzat (1.0) + Térképgenerálás (0.5) + Minimap (0.5) + Perzisztencia (0.5) + Városnövekedés (0.5) = **4.0 pont**.
+**Ajánlott csomag:** Erdők (0.5) + 3D grafika (1) + Folyamatos mozgás(0.5) + Térképgenerálás (0.5) + Minimap (0.5) + Perzisztencia (0.5) = **3.5 pont**.
 
 Így összesen **5.5 pontunk** van, tehát bőven megvagyunk.
 
 ---
 
-## 1. Gazdaság & Játékmenet
+## 1. Gazdaság & Játékmenet (Szilárd)
 
 **Te felelsz a játékos tőkéjéért és a játékidőért.**
 
 **Fő logikák:**
 
-- Pénzügyi rendszer (mindent euróban számolva és tárolva)
+- Pénzügyi rendszer
+    - mit, mennyiért
+    - járművek karbantartása
+    - infrastruktúra építése
 - 4-féle idősebesség (pause/1x/2x/4x)
+    - time.timescale
 - Győzelem/csőd állapotok
 
 **Felelősség a dokumentációban:**
 
-- `economy.md` (szöveges követelmények)
+- `economy.md`
 
 **Felelősség UML-ben:**
 
-- 3-4 db Use Case leírás (pl. időszabályozás, egyenleg követése euróban)
+- 3-4 db Use Case leírás (pl. időszabályozás, egyenleg követése)
 - Saját Use Case diagram
 - Állapotgép (State diagram) a játékállapotokhoz
 - A saját logikád osztálydiagramja (`GameManager`, `Economy`, `TimeManager`)
 
 ---
 
-## 2. Járművek & Útvonalak
+## 2. Járművek & Útvonalak (Tamas)
 
 **Te felelsz mindenért, ami mozog a térképen.**
 
@@ -50,7 +54,7 @@ A max jegyhez **5 komplexitási pont** kell. Az alapjáték 1.5 pontot ér.
 
 **Felelősség a dokumentációban:**
 
-- `vehicles.md` (szöveges követelmények)
+- `vehicles.md`
 
 **Felelősség UML-ben:**
 
@@ -61,20 +65,22 @@ A max jegyhez **5 komplexitási pont** kell. Az alapjáték 1.5 pontot ér.
 
 ---
 
-## 3. Térkép & Infrastruktúra
+## 3. Térkép & Infrastruktúra (Balazs)
 
 **A statikus világ és az építkezés a te asztalod.**
 
 **Fő logikák:**
 
 - A rácsalapú térkép (min 50x50) tárolása
+    - matrixként tárolt
+    - különböző mezők enumban/bool
 - Procedurális térképgenerálás
 - A városok (3x3) és ipari létesítmények logikája
 - Útépítés ellenőrzése (pl. van-e ott tó vagy hegy)
 
 **Felelősség a dokumentációban:**
 
-- `map.md` (szöveges követelmények)
+- `map.md`
 
 **Felelősség UML-ben:**
 
@@ -85,7 +91,7 @@ A max jegyhez **5 komplexitási pont** kell. Az alapjáték 1.5 pontot ér.
 
 ---
 
-## 4. Architektúra & UI (Az Építésvezető)
+## 4. Architektúra & UI (Dominik)
 
 **Te rakod le a projekt alapjait, és integrálod a többiek munkáját. Nem a végén takarítasz, hanem te adod a vázat, amire a többiek építkeznek.**
 
